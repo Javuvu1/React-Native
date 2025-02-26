@@ -2,6 +2,8 @@
 GET http://localhost:3000/api/departamentos/1
 
 ###
+GET http://localhost:3000/api/departamentos/grafica
+###
 
 GET http://localhost:3000/api/departamentos
 

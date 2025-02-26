@@ -8,6 +8,26 @@ const models = initModels(sequelize);
 const Departamento = models.Departamento; // ✅ Nombre corregido (con mayúscula)
 
 class DepartamentoController {
+
+    async getGraficaDepartamento(req, res) {
+        try {
+            // Obtener los datos necesarios para la gráfica
+            const data = await Departamento.findAll({
+                attributes: [
+                    'nombre', // Nombre del departamento
+                    'presupuesto' // Presupuesto del departamento
+                ],
+                order: [['presupuesto', 'DESC']], // Ordenar por presupuesto descendente
+                raw: true // Para obtener datos simples
+            });
+    
+            // Formatear la respuesta
+            res.json(Respuesta.exito(data, "Datos para gráfica de departamentos recuperados"));
+        } catch (error) {
+            logMensaje(`Error en getGraficaDepartamento: ${error.message}`);
+            res.status(500).json(Respuesta.error(null, "Error al generar gráfica de departamentos"));
+        }
+    }
     // 🔍 Búsqueda por nombre
     async searchDepartamentoByNombre(req, res) {
         try {
