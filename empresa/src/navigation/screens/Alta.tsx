@@ -166,7 +166,7 @@ export function AltaScreen() {
               <View style={{ flexDirection: "column", marginBottom: 15 }}>
                 <FormControlLabel>
                   <FormControlLabelText className="text-white">
-                    Salario (USD)
+                    Salario
                   </FormControlLabelText>
                 </FormControlLabel>
                 <Input>
