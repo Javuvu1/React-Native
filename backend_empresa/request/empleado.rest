@@ -1,0 +1,62 @@
+GET http://localhost:3000/api/empleado/grafica
+
+###
+GET http://localhost:3000/api/empleado/1
+
+###
+
+GET http://localhost:3000/api/empleado
+
+###
+
+POST http://localhost:3000/api/empleado
+Content-Type: application/json
+
+{
+    "nombre": "Prueboncio Pruebez",
+    "email": "prueba.garcia@empresa.com",
+    "salario": 25000.00,
+    "fecha_contratacion": "2022-02-10",
+    "id_departamento": 2
+}
+
+###
+
+DELETE http://localhost:3000/api/empleado/99
+
+###
+
+DELETE http://localhost:3000/api/empleado/59
+
+###
+
+PUT  http://localhost:3000/api/empleado/2
+Content-Type: application/json
+
+{
+    "id_empleado": 2,
+    "nombre": "Lauro Martínez",
+    "email": "laura.martinez@empresa.com",
+    "salario": 38000.00,
+    "fecha_contratacion": "2021-05-12",
+    "id_departamento": 19
+}
+
+###
+
+PUT  http://localhost:3000/api/empleado/5
+Content-Type: application/json
+
+{
+    "id_empleado": 3,  // Este id no coincide con el de la URL
+    "nombre": "Carlos López",
+    "email": "carlos.lopez@empresa.com",
+    "salario": 40000.00,
+    "fecha_contratacion": "2022-01-20",
+    "id_departamento": 2
+}
+
+###
+GET http://localhost:3000/api/empleado/buscar?nombre=Juan
+
+

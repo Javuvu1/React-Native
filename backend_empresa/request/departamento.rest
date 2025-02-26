@@ -1,0 +1,58 @@
+### Recuperar un departamento por id_departamento
+GET http://localhost:3000/api/departamentos/1
+
+###
+
+GET http://localhost:3000/api/departamentos
+
+###
+
+POST http://localhost:3000/api/departamentos
+Content-Type: application/json
+
+{
+    "nombre": "Aplicaciones Web",
+    "ubicacion": "Coria",
+    "presupuesto": 50000.00
+}
+
+###
+
+# Borrado de un departamento que no existe (404)
+DELETE http://localhost:3000/api/departamentos/99
+
+###
+
+# Borrado de un departamento que existe (204)
+DELETE http://localhost:3000/api/departamentos/3
+
+###
+
+# Actualización de un departamento
+PUT  http://localhost:3000/api/departamentos/2
+Content-Type: application/json
+
+{
+    "id_departamento": 2,
+    "nombre": "Telefonia",
+    "ubicacion": "Barcelona",
+    "presupuesto": 70000.00
+}
+
+###
+
+# Actualización de un departamento BAD REQUEST (el id del departamento no coincide)
+PUT  http://localhost:3000/api/departamentos/5
+Content-Type: application/json
+
+{
+    "id_departamento": 3,
+    "nombre": "Marketing",
+    "ubicacion": "Madrid",
+    "presupuesto": 40000.00
+}
+
+###
+GET http://localhost:3000/api/departamentos/buscar?nombre=Telefonia
+
+
